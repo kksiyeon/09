@@ -1,16 +1,27 @@
 #include <stdio.h>
-#include <stdlib.h>
 #define SIZE 5
 
 int main(void)
 {
     int i;
-    int grade[SIZE];
-    int score[SIZE];
+    int a[SIZE] = {1, 2, 3, 4, 5};
+    int b[SIZE] = {1, 2, 3, 4, 5};
+    int flag_same = 1;
 
-    for(i=0;i<5;i++)
-    grade[i]=rand()%100;
-    
-    score[i]=grade[i];
+    for (i = 0; i < SIZE; i++)
+    {
+        if (a[i] != b[i])
+        {
+            printf("다름: index %d\n", i);
+            flag_same = 0;
+        }
+    }
 
+    if (flag_same)
+    {
+        printf("두 배열은 완전히 같습니다.\n");
+    }
+
+    return 0;
 }
+
